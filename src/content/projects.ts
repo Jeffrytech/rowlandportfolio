@@ -37,6 +37,10 @@ const field = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/me
 const garden = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-04/garden-${n}`, [800, 1600], alt, opts);
 const sea = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-05/sea-${n}`, [800, 1600], alt, opts);
 const forest = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-06/forest-${n}`, [800, 928], alt, opts);
+const sky = (n: string, alt: string, opts?: Partial<MediaImage>) => {
+  const w = n === '03' ? [800, 1600] : [800, 928];
+  return photo(`/media/project-07/sky-${n}`, w, alt, opts);
+};
 const porch = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-02/porch-${n}`, [800, 1600], alt, opts);
 
 /** Helper for placeholder frames until real media is supplied. */
@@ -162,7 +166,24 @@ const seeds: Seed[] = [
       ],
     },
   },
-  { slug: 'project-07', n: '07', kind: 'tbc', discipline: ['AI-Assisted Production', 'Fashion Concept'], tone: ['#6a4f4f', '#2e2121', '#b99c9c'], ratio: 4 / 5 },
+  {
+    slug: 'project-07',
+    n: '07',
+    kind: 'tbc', // ← set to 'commissioned' or 'independent'
+    discipline: ['Creative Direction', 'Fashion Editorial'],
+    tone: ['#9fb4bc', '#4a5a60', '#e8e4da'],
+    ratio: 4 / 5,
+    real: {
+      title: 'Sky Series', // working title — rename
+      cover: sky('04', 'Against a pale sky, a woman with curly copper hair in a textured powder-blue halter dress looks back over her bare shoulder, hand resting at her collarbone.'),
+      hero: sky('03', 'Close portrait of a woman with sunlit copper curls glancing over her bare shoulder, a pale blue halter strap at her neck, soft hazy sky behind.', { position: '50% 30%' }),
+      selectedVisuals: [
+        sky('01', 'Low-angle shot of a smiling woman with curly copper hair in a blue crinkled halter dress, gazing up into a soft white sky.'),
+        sky('02', 'From below, a barefoot woman in a fitted powder-blue halter dress steps forward along a ledge, one arm raised against the sky.'),
+        sky('04', 'The model turns her open back to the camera, looking over her shoulder in the textured blue dress.'),
+      ],
+    },
+  },
   { slug: 'project-08', n: '08', kind: 'tbc', discipline: ['Art Direction', 'Lookbook'], tone: ['#5a5a58', '#262625', '#b0afab'], ratio: 1 },
 ];
 
