@@ -36,6 +36,7 @@ const train = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/me
 const field = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-03/field-${n}`, [800, 1600], alt, opts);
 const garden = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-04/garden-${n}`, [800, 1600], alt, opts);
 const sea = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-05/sea-${n}`, [800, 1600], alt, opts);
+const forest = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-06/forest-${n}`, [800, 928], alt, opts);
 const porch = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-02/porch-${n}`, [800, 1600], alt, opts);
 
 /** Helper for placeholder frames until real media is supplied. */
@@ -143,7 +144,24 @@ const seeds: Seed[] = [
       ],
     },
   },
-  { slug: 'project-06', n: '06', kind: 'tbc', discipline: ['Visual Storytelling', 'Brand World'], tone: ['#7d7a5c', '#3a382a', '#c1bea0'], ratio: 3 / 4 },
+  {
+    slug: 'project-06',
+    n: '06',
+    kind: 'tbc', // ← set to 'commissioned' or 'independent'
+    discipline: ['Creative Direction', 'Fashion & Accessories'],
+    tone: ['#4f5e44', '#1c2418', '#b9c2a8'],
+    ratio: 4 / 5,
+    real: {
+      title: 'Forest Series', // working title — rename
+      cover: forest('01', 'In a shaded forest clearing, a woman in a sage double-breasted coat and white lace skirt leans back in a wooden chair, eyes closed, a black leather handbag in her hand and an old television showing static beside her.'),
+      hero: forest('04', 'A woman in a long sage coat stands against a tree trunk in a dark forest, her face in shadow and leaf shadows falling across the coat.', { position: '50% 45%' }),
+      selectedVisuals: [
+        forest('02', 'Still life in a forest: a black structured leather handbag resting on a small television showing static, set on a weathered wooden stool on moss.'),
+        forest('03', 'A woman in a sage coat and lace skirt stands beneath the trees holding a black handbag in front of her, beside a television on a stool.'),
+        forest('01', 'The model reclining in a wooden chair in dappled forest light, handbag at her side and a static-filled TV screen beside her.'),
+      ],
+    },
+  },
   { slug: 'project-07', n: '07', kind: 'tbc', discipline: ['AI-Assisted Production', 'Fashion Concept'], tone: ['#6a4f4f', '#2e2121', '#b99c9c'], ratio: 4 / 5 },
   { slug: 'project-08', n: '08', kind: 'tbc', discipline: ['Art Direction', 'Lookbook'], tone: ['#5a5a58', '#262625', '#b0afab'], ratio: 1 },
 ];
