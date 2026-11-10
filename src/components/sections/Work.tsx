@@ -1,14 +1,13 @@
-import { useLayoutEffect, useMemo, useRef, useState, type PointerEvent } from 'react';
+import { useLayoutEffect, useRef, useState, type PointerEvent } from 'react';
 import { Link } from 'react-router-dom';
-import { kindLabel, projects } from '../../content/projects';
-import type { Project, ProjectKind } from '../../content/types';
+import { projects } from '../../content/projects';
+import type { Project } from '../../content/types';
 import { gsap, ScrollTrigger } from '../../lib/gsap';
 import { prefersReducedMotion } from '../../hooks/useReducedMotion';
 import { MediaFrame } from '../MediaFrame';
 import { SplitText } from '../SplitText';
 
 type View = 'gallery' | 'index';
-type Filter = 'all' | Exclude<ProjectKind, 'tbc'>;
 
 
 /** Asymmetric editorial placements for the 12-column gallery, cycled per project. */
@@ -16,9 +15,7 @@ const layout = ['g-a', 'g-b', 'g-c', 'g-d', 'g-e', 'g-f', 'g-g', 'g-h'];
 
 export function Work() {
   const [view, setView] = useState<View>('gallery');
-  const [filter, setFilter] = useState<Filter>('all');
-  const list = useMemo(() => (filter === 'all' ? projects : projects.filter((p) => p.kind === filter)), [filter]);
-  const count = (f: Filter) => (f === 'all' ? projects.length : projects.filter((p) => p.kind === f).length);
+  const list = projects;
 
   return (
     <section id="work" className="work" aria-labelledby="work-title">
@@ -31,13 +28,6 @@ export function Work() {
       </header>
 
       <div className="work__controls">
-        <div className="segmented" role="group" aria-label="Filter projects">
-          {(['all', 'commissioned', 'independent'] as Filter[]).map((f) => (
-            <button key={f} aria-pressed={filter === f} onClick={() => setFilter(f)}>
-              {f === 'all' ? 'All' : kindLabel(f)} <span>{count(f)}</span>
-            </button>
-          ))}
-        </div>
         <div className="segmented" role="group" aria-label="Layout">
           {(['gallery', 'index'] as View[]).map((v) => (
             <button key={v} aria-pressed={view === v} onClick={() => setView(v)}>
@@ -49,10 +39,6 @@ export function Work() {
 
       {view === 'gallery' ? <Gallery list={list} /> : <Index list={list} />}
 
-      <p className="work__note">
-        <span className="tag tag--commissioned">Commissioned</span> client work &nbsp;·&nbsp;
-        <span className="tag tag--independent">Independent</span> self-initiated or speculative work
-      </p>
     </section>
   );
 }
@@ -102,7 +88,6 @@ function Gallery({ list }: { list: Project[] }) {
             <div className="card__meta">
               <span className="card__num">{String(projects.indexOf(p) + 1).padStart(2, '0')}</span>
               <h3 className="card__title">{p.title}</h3>
-              <span className={`tag tag--${p.kind}`}>{kindLabel(p.kind)}</span>
             </div>
             <p className="card__sub">
               {p.disciplines.join(' · ')}{p.year ? <span> — {p.year}</span> : null}
@@ -139,9 +124,7 @@ function Index({ list }: { list: Project[] }) {
       <div className="index__head" aria-hidden="true">
         <span>No.</span>
         <span>Project</span>
-        <span>Type</span>
         <span>Discipline</span>
-        <span>Year</span>
       </div>
       <ol>
         {list.map((p) => (
@@ -154,9 +137,8 @@ function Index({ list }: { list: Project[] }) {
             >
               <span className="index__num">{String(projects.indexOf(p) + 1).padStart(2, '0')}</span>
               <span className="index__title">{p.title}</span>
-              <span className={`tag tag--${p.kind}`}>{kindLabel(p.kind)}</span>
               <span className="index__disc">{p.disciplines.join(', ')}</span>
-              <span className="index__year">{p.year ?? ''}</span>
+              {p.year ? <span className="index__year">{p.year}</span> : null}
               <span className="index__thumb" aria-hidden="true">
                 <MediaFrame media={{ ...p.cover, ratio: 4 / 5 }} />
               </span>

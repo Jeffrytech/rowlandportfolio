@@ -781,7 +781,7 @@ main:focus {
 .index__head,
 .index__row {
   display: grid;
-  grid-template-columns: 4rem minmax(0, 3fr) 10rem minmax(0, 2fr) 5rem;
+  grid-template-columns: 4rem minmax(0, 3fr) minmax(0, 2fr) auto;
   align-items: baseline;
   gap: var(--col-gap);
 }
@@ -1428,9 +1428,9 @@ a.contact__email:hover {
   .nav__title { display: none; }
   .nav { grid-template-columns: 1fr auto; }
   .index__head,
-  .index__row { grid-template-columns: 3rem minmax(0, 3fr) 9rem 4rem; }
+  .index__row { grid-template-columns: 3rem minmax(0, 1fr) auto; }
   .index__disc { display: none; }
-  .index__head span:nth-child(4) { display: none; }
+  .index__head span:nth-child(3) { display: none; }
 }
 
 @media (max-width: 860px) {
@@ -1455,13 +1455,12 @@ a.contact__email:hover {
   .index__head { display: none; }
   .index__row {
     grid-template-columns: 2.25rem minmax(0, 1fr) 72px;
-    grid-template-areas: 'num title thumb' 'num tag thumb';
+    grid-template-areas: 'num title thumb';
     row-gap: 6px;
     align-items: center;
   }
   .index__num { grid-area: num; align-self: start; padding-top: 0.4em; }
   .index__title { grid-area: title; }
-  .index__row .tag { grid-area: tag; }
   .index__year { display: none; }
   .index__thumb { display: block; grid-area: thumb; }
   .index__row:hover { padding-left: 0; }
