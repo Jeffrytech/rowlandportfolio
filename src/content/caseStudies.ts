@@ -90,7 +90,7 @@ export const caseStudies: Record<string, CaseStudyCopy> = {
       },
       {
         title: 'Planning the Look',
-        body: 'I planned relaxed, honest poses: hugging knees, shading the eyes, resting a chin on a hand. The chair is worn on purpose, so it feels lived-in.',
+        body: 'I planned relaxed, honest poses: sitting cross-legged, leaning back lazily in the sun, hugging knees, shading the eyes and resting a chin on a hand. The chair is worn on purpose, so it feels lived-in.',
       },
       production(
         'I directed a sunny wooden porch, a weathered chair, strong summer light with stripy shadows, a white eyelet dress and black ankle boots.',
@@ -98,7 +98,7 @@ export const caseStudies: Record<string, CaseStudyCopy> = {
       finishing('I made sure the sunlight came from the same side and the lace looked crisp.'),
     ],
     finalBody:
-      'The final story is two calm, sunlit portraits on the porch. One feels thoughtful and one feels playful, like two moments from the same lazy afternoon.',
+      'The final story is four sunlit pictures on the same porch and chair. They move from a confident cross-legged pose to a sleepy lean back in the sun, with a playful and a thoughtful moment in between, like one lazy afternoon.',
   },
 
   'project-03': {

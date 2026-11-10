@@ -40,7 +40,8 @@ const box = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/medi
 const coast = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-10/coast-${n}`, [800, 1080], alt, opts);
 const snow = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-11/snow-${n}`, [800, 1600], alt, opts);
 const wall = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-12/wall-${n}`, [800, 1080], alt, opts);
-const porch = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-02/porch-${n}`, [800, 1600], alt, opts);
+const porch = (n: string, alt: string, opts?: Partial<MediaImage>) =>
+  photo(`/media/project-02/porch-${n}`, n === '03' ? [800, 928] : [800, 1600], alt, opts);
 
 /** Helper for placeholder frames until real media is supplied. */
 const frame = (alt: string, ratio: number, tone: string, caption?: string): MediaImage => ({
@@ -92,7 +93,9 @@ const seeds: Seed[] = [
       cover: porch('01', 'A woman with dark curly hair in a white broderie anglaise dress and black ankle boots sits in a weathered wooden chair on a sunlit porch, chin resting on her hand.'),
       hero: porch('02', 'On a sunlit porch, a woman in a white eyelet dress hugs her knees in a wooden chair, shading her eyes from the light with one hand.', { position: '50% 30%' }),
       selectedVisuals: [
+        porch('03', 'A woman with dark curls in a long-sleeved white eyelet lace dress and black ankle boots sits cross-legged in a weathered wooden porch chair, one hand in her hair, looking at the camera.'),
         porch('01', 'A woman in a white eyelet dress sits forward in a wooden porch chair, chin on her hand, striped shadows across the deck.'),
+        porch('04', 'Leaning back in the wooden porch chair with her eyes half closed, the model stretches out in the white lace dress, legs crossed, as sunlight falls across the deck.'),
       ],
     },
   },
