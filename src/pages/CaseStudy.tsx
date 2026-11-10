@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef, type ReactNode } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { getNextProject, getProject, projects } from '../content/projects';
+import { getNextProject, getProject, kindLabel, projects } from '../content/projects';
 import type { Media } from '../content/types';
 import { useMeta } from '../hooks/useMeta';
 import { gsap } from '../lib/gsap';
@@ -55,7 +55,7 @@ function CaseStudyView({ slug }: { slug: string }) {
     return () => ctx.revert();
   }, [slug]);
 
-  const kind = p.kind === 'commissioned' ? 'Commissioned' : 'Independent / Speculative';
+  const kind = kindLabel(p.kind, true);
 
   return (
     <article ref={root} className="cs">
@@ -86,7 +86,7 @@ function CaseStudyView({ slug }: { slug: string }) {
         )}
       </header>
 
-      <div className="cs__hero">
+      <div className={`cs__hero ${p.hero.ratio < 1 ? 'cs__hero--portrait' : ''}`}>
         <MediaFrame media={p.hero} priority />
       </div>
 

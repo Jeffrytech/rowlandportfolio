@@ -19,6 +19,22 @@ import type { Media, MediaImage, Project, ProjectKind } from './types';
 
 const PH = 'Placeholder —';
 
+export const kindLabel = (k: ProjectKind, long = false) =>
+  k === 'commissioned' ? 'Commissioned' : k === 'independent' ? (long ? 'Independent / Speculative' : 'Independent') : 'Type TBC';
+
+/** Real image helper. `base` is the path without the width suffix, e.g. "/media/project-01/train-01". */
+const photo = (base: string, widths: number[], alt: string, opts: Partial<MediaImage> = {}): MediaImage => ({
+  type: 'image',
+  src: `${base}-${widths[widths.length - 1]}.webp`,
+  srcSet: widths.map((w) => `${base}-${w}.webp ${w}w`).join(', '),
+  alt,
+  ratio: 4 / 5,
+  ...opts,
+});
+
+const train = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-01/train-${n}`, [800, 928], alt, opts);
+const porch = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-02/porch-${n}`, [800, 1600], alt, opts);
+
 /** Helper for placeholder frames until real media is supplied. */
 const frame = (alt: string, ratio: number, tone: string, caption?: string): MediaImage => ({
   type: 'image',
@@ -35,11 +51,44 @@ interface Seed {
   discipline: string[];
   tone: [string, string, string];
   ratio: number;
+  /** Real content overrides — anything set here replaces the generated placeholder. */
+  real?: Partial<Project>;
 }
 
 const seeds: Seed[] = [
-  { slug: 'project-01', n: '01', kind: 'commissioned', discipline: ['Fashion Campaign', 'Creative Direction'], tone: ['#8a7a6a', '#4a3f36', '#c8b9a6'], ratio: 4 / 5 },
-  { slug: 'project-02', n: '02', kind: 'commissioned', discipline: ['Art Direction', 'Editorial'], tone: ['#5d6660', '#2d3330', '#a9b0a6'], ratio: 3 / 4 },
+  {
+    slug: 'project-01',
+    n: '01',
+    kind: 'tbc', // ← set to 'commissioned' or 'independent'
+    discipline: ['Creative Direction', 'Fashion Editorial'],
+    tone: ['#7d8a6e', '#3d4636', '#b9c2ad'],
+    ratio: 4 / 5,
+    real: {
+      title: 'Train Series', // working title — rename
+      cover: train('02', 'A woman with curly auburn hair in a pale blue linen shirt and beige trousers leans against an open train door, palm trees behind her, looking back at the camera.'),
+      hero: train('01', 'Seen from behind, a woman in a blue linen shirt holds a brass rail in an open train doorway, one hand in her hair, facing a dense palm forest.', { position: '50% 35%' }),
+      selectedVisuals: [
+        train('03', 'Close portrait of a woman with sunlit curly hair in a blue linen shirt, glancing over her shoulder against blurred palms.'),
+        train('02', 'A woman in linen leans against the train door frame, one hand on the rail and one in her pocket, palms filling the doorway.'),
+      ],
+    },
+  },
+  {
+    slug: 'project-02',
+    n: '02',
+    kind: 'tbc', // ← set to 'commissioned' or 'independent'
+    discipline: ['Creative Direction', 'Fashion Editorial'],
+    tone: ['#a08f78', '#4a4034', '#d8ccba'],
+    ratio: 4 / 5,
+    real: {
+      title: 'Porch Series', // working title — rename
+      cover: porch('01', 'A woman with dark curly hair in a white broderie anglaise dress and black ankle boots sits in a weathered wooden chair on a sunlit porch, chin resting on her hand.'),
+      hero: porch('02', 'On a sunlit porch, a woman in a white eyelet dress hugs her knees in a wooden chair, shading her eyes from the light with one hand.', { position: '50% 30%' }),
+      selectedVisuals: [
+        porch('01', 'A woman in a white eyelet dress sits forward in a wooden porch chair, chin on her hand, striped shadows across the deck.'),
+      ],
+    },
+  },
   { slug: 'project-03', n: '03', kind: 'independent', discipline: ['AI-Assisted Production', 'Visual Storytelling'], tone: ['#6e5f72', '#2f2733', '#b8aabb'], ratio: 1 },
   { slug: 'project-04', n: '04', kind: 'commissioned', discipline: ['Fashion Campaign', 'Art Direction'], tone: ['#9a6d52', '#4b3022', '#d6b49a'], ratio: 4 / 5 },
   { slug: 'project-05', n: '05', kind: 'independent', discipline: ['Creative Direction', 'Film'], tone: ['#4f5a68', '#1f252d', '#9ea8b5'], ratio: 16 / 10 },
@@ -85,6 +134,7 @@ const build = (s: Seed): Project => {
       media: [frame(label('final campaign image'), 16 / 9, deep), frame(label('final campaign image'), 4 / 5, light)],
     },
     credits: [],
+    ...s.real,
   };
 };
 

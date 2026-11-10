@@ -1,6 +1,6 @@
 import { useLayoutEffect, useMemo, useRef, useState, type PointerEvent } from 'react';
 import { Link } from 'react-router-dom';
-import { projects } from '../../content/projects';
+import { kindLabel, projects } from '../../content/projects';
 import type { Project, ProjectKind } from '../../content/types';
 import { gsap, ScrollTrigger } from '../../lib/gsap';
 import { prefersReducedMotion } from '../../hooks/useReducedMotion';
@@ -8,9 +8,8 @@ import { MediaFrame } from '../MediaFrame';
 import { SplitText } from '../SplitText';
 
 type View = 'gallery' | 'index';
-type Filter = 'all' | ProjectKind;
+type Filter = 'all' | Exclude<ProjectKind, 'tbc'>;
 
-const kindLabel = (k: ProjectKind) => (k === 'commissioned' ? 'Commissioned' : 'Independent');
 
 /** Asymmetric editorial placements for the 12-column gallery, cycled per project. */
 const layout = ['g-a', 'g-b', 'g-c', 'g-d', 'g-e', 'g-f', 'g-g', 'g-h'];

@@ -192,6 +192,12 @@ main:focus {
 .tag--commissioned::before {
   background: currentColor;
 }
+.tag--tbc {
+  color: var(--mute);
+}
+.tag--tbc::before {
+  border-style: dashed;
+}
 
 .btn {
   position: relative;
@@ -1236,6 +1242,14 @@ a.contact__email:hover {
 }
 .cs__hero {
   overflow: hidden;
+}
+.cs__hero--portrait {
+  display: grid;
+  justify-items: center;
+  padding: 0 var(--gutter);
+}
+.cs__hero--portrait .frame {
+  width: min(100%, calc(88svh * var(--ratio)));
 }
 .cs__chapter {
   display: grid;

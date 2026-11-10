@@ -4,8 +4,12 @@
  * Components only render what is described here.
  */
 
-/** Commissioned = paid client work. Independent = self-initiated, personal or speculative work. */
-export type ProjectKind = 'commissioned' | 'independent';
+/**
+ * Commissioned = paid client work.
+ * Independent = self-initiated, personal or speculative work.
+ * tbc = not yet confirmed — shown as "Type TBC" until you choose one of the above.
+ */
+export type ProjectKind = 'commissioned' | 'independent' | 'tbc';
 
 export interface MediaImage {
   type: 'image';
@@ -21,6 +25,8 @@ export interface MediaImage {
   caption?: string;
   /** Placeholder tone used until a real image is supplied (any CSS colour). */
   tone?: string;
+  /** Focal point when the image is cropped, as CSS object-position, e.g. "50% 30%". */
+  position?: string;
 }
 
 export interface MediaVideo {
@@ -33,6 +39,7 @@ export interface MediaVideo {
   ratio: number;
   caption?: string;
   tone?: string;
+  position?: string;
 }
 
 export type Media = MediaImage | MediaVideo;

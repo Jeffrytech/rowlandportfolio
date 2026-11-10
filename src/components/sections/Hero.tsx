@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { site } from '../../content/site';
-import { projects } from '../../content/projects';
+import { kindLabel, projects } from '../../content/projects';
 import { gsap } from '../../lib/gsap';
 import { prefersReducedMotion } from '../../hooks/useReducedMotion';
 import { MediaFrame } from '../MediaFrame';
@@ -49,7 +49,7 @@ export function Hero() {
         <MediaFrame media={lead.cover} priority sizes="(max-width: 760px) 70vw, 28vw" />
         <span className="hero__visual-cap">
           <span>Featured — {lead.title}</span>
-          <span>{lead.kind === 'commissioned' ? 'Commissioned' : 'Independent'}</span>
+          <span>{kindLabel(lead.kind)}</span>
         </span>
       </Link>
 

@@ -28,9 +28,9 @@ export const site = {
 
   contact: {
     /** e.g. "hello@yourname.com". Empty = labelled placeholder (no broken mailto link). */
-    email: '',
+    email: 'rowlandjeffry@gmail.com',
     /** Full LinkedIn profile URL. Empty = hidden. */
-    linkedin: '',
+    linkedin: 'https://www.linkedin.com/in/rowland-jeffry-6008a3198/',
     /** Path to a PDF in /public, e.g. "/Rowland-Jeff-Igboanugo-CV.pdf". Empty = hidden. */
     cv: '',
     /** Optional extra profiles. Only add real, working URLs. */

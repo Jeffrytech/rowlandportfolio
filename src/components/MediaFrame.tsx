@@ -30,12 +30,13 @@ export function MediaFrame({ media, className = '', priority = false, sizes = '1
       srcSet={media.srcSet}
       sizes={media.srcSet ? sizes : undefined}
       alt={media.alt}
+      style={media.position ? { objectPosition: media.position } : undefined}
       loading={priority ? 'eager' : 'lazy'}
       decoding={priority ? 'sync' : 'async'}
       fetchPriority={priority ? 'high' : 'auto'}
     />
   ) : (
-    <LazyVideo src={media.src} poster={media.poster} alt={media.alt} />
+    <LazyVideo src={media.src} poster={media.poster} alt={media.alt} position={media.position} />
   );
 
   return (
@@ -58,7 +59,7 @@ function Placeholder({ alt }: { alt: string }) {
   );
 }
 
-function LazyVideo({ src, poster, alt }: { src: string; poster?: string; alt: string }) {
+function LazyVideo({ src, poster, alt, position }: { src: string; poster?: string; alt: string; position?: string }) {
   const ref = useRef<HTMLVideoElement>(null);
   const [load, setLoad] = useState(false);
 
@@ -87,6 +88,7 @@ function LazyVideo({ src, poster, alt }: { src: string; poster?: string; alt: st
       src={load ? src : undefined}
       poster={poster}
       aria-label={alt}
+      style={position ? { objectPosition: position } : undefined}
       muted
       loop
       playsInline
