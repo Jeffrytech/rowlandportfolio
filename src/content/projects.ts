@@ -34,6 +34,7 @@ const photo = (base: string, widths: number[], alt: string, opts: Partial<MediaI
 
 const train = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-01/train-${n}`, [800, 928], alt, opts);
 const field = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-03/field-${n}`, [800, 1600], alt, opts);
+const garden = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-04/garden-${n}`, [800, 1600], alt, opts);
 const porch = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-02/porch-${n}`, [800, 1600], alt, opts);
 
 /** Helper for placeholder frames until real media is supplied. */
@@ -107,7 +108,23 @@ const seeds: Seed[] = [
       ],
     },
   },
-  { slug: 'project-04', n: '04', kind: 'tbc', discipline: ['Fashion Campaign', 'Art Direction'], tone: ['#9a6d52', '#4b3022', '#d6b49a'], ratio: 4 / 5 },
+  {
+    slug: 'project-04',
+    n: '04',
+    kind: 'tbc', // ← set to 'commissioned' or 'independent'
+    discipline: ['Creative Direction', 'Period Editorial'],
+    tone: ['#a07c5e', '#3e2e22', '#d9c0a4'],
+    ratio: 4 / 5,
+    real: {
+      title: 'Garden Series', // working title — rename
+      cover: garden('02', 'Seen from directly above, a couple in Regency-era dress spin hand in hand on a circular stone terrace, her empire-line gown blurred with movement.'),
+      hero: garden('01', 'A laughing woman in a pale satin empire-line gown holds the hand of a man in a dark tailcoat as they walk through a lush garden.', { position: '50% 30%' }),
+      selectedVisuals: [
+        garden('03', 'Cropped detail of a woman in a flowing satin Regency gown walking across a lawn, hands clasped, a man’s dark sleeve at her back.'),
+        garden('02', 'Overhead view of the couple turning together on the stone terrace, the gown’s hem swirling outward.'),
+      ],
+    },
+  },
   { slug: 'project-05', n: '05', kind: 'tbc', discipline: ['Creative Direction', 'Film'], tone: ['#4f5a68', '#1f252d', '#9ea8b5'], ratio: 16 / 10 },
   { slug: 'project-06', n: '06', kind: 'tbc', discipline: ['Visual Storytelling', 'Brand World'], tone: ['#7d7a5c', '#3a382a', '#c1bea0'], ratio: 3 / 4 },
   { slug: 'project-07', n: '07', kind: 'tbc', discipline: ['AI-Assisted Production', 'Fashion Concept'], tone: ['#6a4f4f', '#2e2121', '#b99c9c'], ratio: 4 / 5 },
