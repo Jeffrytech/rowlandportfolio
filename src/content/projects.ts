@@ -44,6 +44,7 @@ const sky = (n: string, alt: string, opts?: Partial<MediaImage>) => {
 const shore = (n: string, alt: string, opts?: Partial<MediaImage>) =>
   photo(`/media/project-08/shore-${n}`, n === '01' ? [800, 928] : [800, 1080], alt, opts);
 const box = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-09/box-${n}`, [800, 928], alt, opts);
+const coast = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-10/coast-${n}`, [800, 1080], alt, opts);
 const porch = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-02/porch-${n}`, [800, 1600], alt, opts);
 
 /** Helper for placeholder frames until real media is supplied. */
@@ -219,6 +220,23 @@ const seeds: Seed[] = [
         box('03', 'In profile inside the pink box, the model sits back in the folding chair, chin lifted, legs in sheer black tights crossed and raised.'),
         box('04', 'The model curls up on the wooden chair hugging her knees, resting her cheek on her hand, inside the pink cardboard set.'),
         box('01', 'Wide view of the pink cardboard box set with the model, folding chair, jeans draped over the chair back and worn sneakers beside a pile of books.'),
+      ],
+    },
+  },
+  {
+    slug: 'project-10',
+    n: '10',
+    kind: 'tbc', // ← set to 'commissioned' or 'independent'
+    discipline: ['Creative Direction', 'Fashion Editorial'],
+    tone: ['#8fa3b4', '#3a3a36', '#dcd6ca'],
+    ratio: 4 / 5,
+    real: {
+      title: 'Coast Series', // working title — rename
+      cover: coast('03', 'A barefoot woman with windswept dark hair, in an oversized black blazer and long black skirt, stands on a metal-framed chair in the shallow surf, the shoreline stretching behind her.'),
+      hero: coast('01', 'An empty black blazer and long skirt hang from a clothes rail standing in the wet sand at the water’s edge, reflected in the shallow water under a pale blue sky.', { position: '50% 55%' }),
+      selectedVisuals: [
+        coast('02', 'A woman in an oversized black blazer sits barefoot on a pale limestone boulder, hugging her knees, with blue sea and a rocky headland behind her.'),
+        coast('03', 'The model standing tall on a chair in the surf, the black suit stark against the soft sky and sea.'),
       ],
     },
   },
