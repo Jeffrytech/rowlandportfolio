@@ -45,6 +45,7 @@ const shore = (n: string, alt: string, opts?: Partial<MediaImage>) =>
   photo(`/media/project-08/shore-${n}`, n === '01' ? [800, 928] : [800, 1080], alt, opts);
 const box = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-09/box-${n}`, [800, 928], alt, opts);
 const coast = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-10/coast-${n}`, [800, 1080], alt, opts);
+const snow = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-11/snow-${n}`, [800, 1600], alt, opts);
 const porch = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-02/porch-${n}`, [800, 1600], alt, opts);
 
 /** Helper for placeholder frames until real media is supplied. */
@@ -237,6 +238,23 @@ const seeds: Seed[] = [
       selectedVisuals: [
         coast('02', 'A woman in an oversized black blazer sits barefoot on a pale limestone boulder, hugging her knees, with blue sea and a rocky headland behind her.'),
         coast('03', 'The model standing tall on a chair in the surf, the black suit stark against the soft sky and sea.'),
+      ],
+    },
+  },
+  {
+    slug: 'project-11',
+    n: '11',
+    kind: 'tbc', // ← set to 'commissioned' or 'independent' (a brand logo is visible — only mark commissioned if the brand hired you)
+    discipline: ['Creative Direction', 'Streetwear'],
+    tone: ['#6f86a0', '#1e2a38', '#c9d6e2'],
+    ratio: 4 / 5,
+    real: {
+      title: 'Snow Series', // working title — rename
+      cover: snow('02', 'A young man in a black cap and balaclava, wearing a black puffer jacket dusted with snow, stands with his hands in his pockets on a snowy city street during a blizzard.'),
+      hero: snow('01', 'A black down puffer jacket hangs alone on a chrome clothing rail in the middle of a snow-covered city street as snow falls at dusk.', { position: '50% 50%' }),
+      selectedVisuals: [
+        snow('03', 'Close portrait of the young man glancing back over his shoulder, snowflakes on his face, cap and jacket, the blue blur of the snowy street behind him.'),
+        snow('02', 'The model facing the camera in the falling snow, the puffer jacket catching flakes, buildings soft and blue in the distance.'),
       ],
     },
   },
