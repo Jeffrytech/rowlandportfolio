@@ -43,6 +43,7 @@ const sky = (n: string, alt: string, opts?: Partial<MediaImage>) => {
 };
 const shore = (n: string, alt: string, opts?: Partial<MediaImage>) =>
   photo(`/media/project-08/shore-${n}`, n === '01' ? [800, 928] : [800, 1080], alt, opts);
+const box = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-09/box-${n}`, [800, 928], alt, opts);
 const porch = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-02/porch-${n}`, [800, 1600], alt, opts);
 
 /** Helper for placeholder frames until real media is supplied. */
@@ -200,6 +201,24 @@ const seeds: Seed[] = [
       selectedVisuals: [
         shore('02', 'Soft-focus black-and-white image of the woman walking away along the shoreline, blazer and long skirt moving, one arm swinging out.'),
         shore('03', 'The model mid-stride on wet sand, lifting her skirt as she runs and laughs beside the breaking waves.'),
+      ],
+    },
+  },
+  {
+    slug: 'project-09',
+    n: '09',
+    kind: 'tbc', // ← set to 'commissioned' or 'independent'
+    discipline: ['Creative Direction', 'Set Design'],
+    tone: ['#b98a88', '#5a3c38', '#e6d2cc'],
+    ratio: 4 / 5,
+    real: {
+      title: 'Box Series', // working title — rename
+      cover: box('01', 'Inside an oversized pink cardboard box set, a woman in a worn brown leather jacket, champagne satin slip skirt and black ankle boots perches on a wooden folding chair, one hand pressed against the box wall and one leg raised.'),
+      hero: box('02', 'A woman in a distressed leather jacket and satin skirt leans forward over the back of a wooden chair inside a pink cardboard box, red canvas sneakers and a stack of books on the floor outside.', { position: '50% 40%' }),
+      selectedVisuals: [
+        box('03', 'In profile inside the pink box, the model sits back in the folding chair, chin lifted, legs in sheer black tights crossed and raised.'),
+        box('04', 'The model curls up on the wooden chair hugging her knees, resting her cheek on her hand, inside the pink cardboard set.'),
+        box('01', 'Wide view of the pink cardboard box set with the model, folding chair, jeans draped over the chair back and worn sneakers beside a pile of books.'),
       ],
     },
   },
