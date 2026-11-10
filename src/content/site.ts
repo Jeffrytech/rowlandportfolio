@@ -21,7 +21,7 @@ export const site = {
 
   seo: {
     description:
-      'Rowland Jeff Igboanugo — Creative & Art Director with 7+ years in the creative industry, working across fashion creative direction, art direction, visual storytelling and AI-assisted creative production.',
+      'Rowland Jeff Igboanugo — Creative Director, founder, Gen AI educator and AI researcher in the fashion industry, with 7+ years in the creative industry. Guest lecturer who has taught 360 students how to use AI in fashion.',
     /** 1200×630 image in /public used for link previews. */
     ogImage: '/og-image.png',
   },
@@ -47,25 +47,25 @@ export const site = {
 
   about: {
     /** Short line shown large at the top of the About section. */
-    lede: 'Creative & Art Director with over seven years shaping images, campaigns and visual worlds — rooted in fashion, extended by applied AI.',
-    /** Longer biography paragraphs. Replace with your own words. */
+    lede: 'Creative Director, founder and Gen AI educator — making fashion images for over seven years, and teaching the fashion industry how to create with AI.',
+    /** Biography paragraphs. */
     bio: [
-      'Placeholder — your professional background: where you started, the disciplines you moved through, and how fashion creative direction became the centre of your practice.',
-      'Placeholder — how you use applied AI inside a creative process: as a tool for ideation, pre-visualisation and production, always directed by taste and intent.',
+      'I am a Creative Director and founder with more than seven years in the creative industry. My work lives where fashion and technology meet. I decide how a campaign should look and feel, from the very first idea to the final picture.',
+      'I am also a Gen AI educator and AI researcher in the fashion industry. As a guest lecturer, I have taught 360 students how to use AI in fashion: how it can help them explore ideas faster, plan shoots and create campaign images, while people stay in charge of the taste and the story. I make my own campaigns with Qovai, a fashion AI agent tool.',
     ],
-    /** Your creative philosophy, as short statements. */
+    /** Creative philosophy, as short statements. */
     philosophy: [
-      { title: 'Placeholder principle', body: 'Placeholder — one sentence on how you think about images.' },
-      { title: 'Placeholder principle', body: 'Placeholder — one sentence on craft, restraint or collaboration.' },
-      { title: 'Placeholder principle', body: 'Placeholder — one sentence on technology serving the idea.' },
+      { title: 'Idea first, tool second', body: 'AI is a powerful tool, but the idea and the taste always come from a person.' },
+      { title: 'Know who it is for', body: 'Every image starts with its audience. When you know who you are talking to, you know what to show them.' },
+      { title: 'Share what you learn', body: 'Teaching others makes the whole industry stronger, and it keeps me learning too.' },
     ],
     /** Portrait in /public, e.g. "/media/portrait.jpg". Empty = placeholder frame. */
     portrait: '',
     portraitAlt: 'Portrait of Rowland Jeff Igboanugo',
     facts: [
-      { label: 'Experience', value: '7+ years' },
-      { label: 'Focus', value: 'Fashion & Visual Culture' },
-      { label: 'Practice', value: 'Creative Direction · Art Direction · Applied AI' },
+      { label: 'Experience', value: '7+ years in the creative industry' },
+      { label: 'Roles', value: 'Founder · Creative Director · AI Researcher' },
+      { label: 'Teaching', value: 'Guest lecturer — 360 students taught to use AI in fashion' },
     ],
   },
 
