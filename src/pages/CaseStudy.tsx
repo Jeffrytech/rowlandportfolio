@@ -55,7 +55,8 @@ function CaseStudyView({ slug }: { slug: string }) {
     return () => ctx.revert();
   }, [slug]);
 
-  const kind = kindLabel(p.kind, true);
+  // Type is only shown once it is confirmed (commissioned or independent).
+  const kind = p.kind === 'tbc' ? null : kindLabel(p.kind, true);
 
   return (
     <article ref={root} className="cs">
@@ -63,7 +64,7 @@ function CaseStudyView({ slug }: { slug: string }) {
         <div className="cs__crumbs" data-cs-fade>
           <Link to={{ pathname: '/', hash: 'work' }} className="cs__back">← All work</Link>
           <span>Project {String(index).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}</span>
-          <span className={`tag tag--${p.kind}`}>{kind}</span>
+          {kind && <span className={`tag tag--${p.kind}`}>{kind}</span>}
         </div>
 
         <h1 className="cs__title">
@@ -77,7 +78,7 @@ function CaseStudyView({ slug }: { slug: string }) {
           <div><dt>Production</dt><dd>Qovai, a fashion AI agent tool</dd></div>
           <div><dt>Role</dt><dd>{p.role.join(', ')}</dd></div>
           <div><dt>Discipline</dt><dd>{p.disciplines.join(', ')}</dd></div>
-          <div><dt>Type</dt><dd>{kind}</dd></div>
+          {kind && <div><dt>Type</dt><dd>{kind}</dd></div>}
         </dl>
 
         {p.note && (
