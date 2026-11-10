@@ -20,10 +20,12 @@ export const site = {
   availability: '', // e.g. "Available for select projects from 2027" — leave empty to hide
 
   seo: {
+    /** Title used for the homepage and link previews. */
+    title: 'Rowland Jeff Igboanugo — Creative Director & Gen AI Educator',
     description:
-      'Rowland Jeff Igboanugo — Creative Director, founder, Gen AI educator and AI researcher in the fashion industry, with 7+ years in the creative industry. Guest lecturer who has taught 360 students how to use AI in fashion.',
-    /** 1200×630 image in /public used for link previews. */
-    ogImage: '/og-image.png',
+      'Creative Director, founder and Gen AI educator, teaching the fashion industry how to create with AI. Fashion campaigns, art direction and AI-assisted production.',
+    /** 1200×630 image in /public used for link previews (social cards). */
+    ogImage: '/og-image.jpg',
   },
 
   contact: {
