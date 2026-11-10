@@ -47,7 +47,7 @@ export const site = {
 
   about: {
     /** Short line shown large at the top of the About section. */
-    lede: 'Creative Director, founder and Gen AI educator, and teaching the fashion industry how to create with AI.',
+    lede: 'Creative Director, founder and Gen AI educator, teaching the fashion industry how to create with AI.',
     /** Biography paragraphs. */
     bio: [
       'I am a Creative Director and founder with more than seven years in the creative industry. My work lives where fashion and technology meet. I decide how a campaign should look and feel, from the very first idea to the final picture.',
