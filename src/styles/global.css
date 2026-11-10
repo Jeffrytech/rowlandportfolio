@@ -640,12 +640,6 @@ main:focus {
 .interlude__frame .frame__inner {
   height: 100%;
 }
-.interlude__frame::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(10, 10, 9, 0.55), rgba(10, 10, 9, 0.1) 60%);
-}
 .interlude__text {
   position: relative;
   z-index: 1;
