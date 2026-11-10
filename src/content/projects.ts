@@ -46,6 +46,7 @@ const shore = (n: string, alt: string, opts?: Partial<MediaImage>) =>
 const box = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-09/box-${n}`, [800, 928], alt, opts);
 const coast = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-10/coast-${n}`, [800, 1080], alt, opts);
 const snow = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-11/snow-${n}`, [800, 1600], alt, opts);
+const wall = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-12/wall-${n}`, [800, 1080], alt, opts);
 const porch = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-02/porch-${n}`, [800, 1600], alt, opts);
 
 /** Helper for placeholder frames until real media is supplied. */
@@ -255,6 +256,24 @@ const seeds: Seed[] = [
       selectedVisuals: [
         snow('03', 'Close portrait of the young man glancing back over his shoulder, snowflakes on his face, cap and jacket, the blue blur of the snowy street behind him.'),
         snow('02', 'The model facing the camera in the falling snow, the puffer jacket catching flakes, buildings soft and blue in the distance.'),
+      ],
+    },
+  },
+  {
+    slug: 'project-12',
+    n: '12',
+    kind: 'tbc', // ← set to 'commissioned' or 'independent'
+    discipline: ['Creative Direction', 'Tailoring'],
+    tone: ['#5a3a28', '#1e1814', '#e8ddd0'],
+    ratio: 4 / 5,
+    real: {
+      title: 'Tailoring Series', // working title — rename
+      cover: wall('04', 'A woman with long, tousled dark hair, freckles and chunky silver hoop earrings, in a black wool blazer, stands against a sunlit cream wall, looking straight into the camera.'),
+      hero: wall('02', 'Seen from behind, a woman in a black wool blazer looks back over her shoulder against a cream wall, her shadow and the shadow of palm leaves cast beside her.', { position: '50% 35%' }),
+      selectedVisuals: [
+        wall('01', 'Still life: a black single-breasted wool blazer with peaked lapels hangs on a clear hanger against a dark brown wood-grain wall.'),
+        wall('03', 'Side portrait of the model turning toward the camera, a silver hoop earring catching the light, palm shadows across her black blazer.'),
+        wall('04', 'Front-facing portrait against the cream wall, wind-tossed hair falling over the black blazer, a soft shadow behind her.'),
       ],
     },
   },
