@@ -41,6 +41,8 @@ const sky = (n: string, alt: string, opts?: Partial<MediaImage>) => {
   const w = n === '03' ? [800, 1600] : [800, 928];
   return photo(`/media/project-07/sky-${n}`, w, alt, opts);
 };
+const shore = (n: string, alt: string, opts?: Partial<MediaImage>) =>
+  photo(`/media/project-08/shore-${n}`, n === '01' ? [800, 928] : [800, 1080], alt, opts);
 const porch = (n: string, alt: string, opts?: Partial<MediaImage>) => photo(`/media/project-02/porch-${n}`, [800, 1600], alt, opts);
 
 /** Helper for placeholder frames until real media is supplied. */
@@ -184,7 +186,23 @@ const seeds: Seed[] = [
       ],
     },
   },
-  { slug: 'project-08', n: '08', kind: 'tbc', discipline: ['Art Direction', 'Lookbook'], tone: ['#5a5a58', '#262625', '#b0afab'], ratio: 1 },
+  {
+    slug: 'project-08',
+    n: '08',
+    kind: 'tbc', // ← set to 'commissioned' or 'independent'
+    discipline: ['Creative Direction', 'Fashion Editorial'],
+    tone: ['#8a857c', '#3a3733', '#d8d3c8'],
+    ratio: 4 / 5,
+    real: {
+      title: 'Shore Series', // working title — rename
+      cover: shore('03', 'Black-and-white image of a laughing woman with long windswept hair, in a dark tailored blazer and long skirt, leaping barefoot across wet sand at the water’s edge.'),
+      hero: shore('01', 'Black-and-white image of a barefoot woman in a dark oversized suit standing at the shoreline, arms stretched straight above her head, face turned to the sky.', { position: '50% 30%' }),
+      selectedVisuals: [
+        shore('02', 'Soft-focus black-and-white image of the woman walking away along the shoreline, blazer and long skirt moving, one arm swinging out.'),
+        shore('03', 'The model mid-stride on wet sand, lifting her skirt as she runs and laughs beside the breaking waves.'),
+      ],
+    },
+  },
 ];
 
 const build = (s: Seed): Project => {
