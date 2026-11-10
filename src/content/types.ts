@@ -56,10 +56,13 @@ export interface Project {
   title: string;
   /** One-line editorial standfirst shown in the gallery and case-study hero. */
   standfirst: string;
+  /** Optional disclaimer shown on the case study (e.g. speculative work featuring brand logos). */
+  note?: string;
   kind: ProjectKind;
   /** Client / brand. Leave empty for independent work. */
   client?: string;
-  year: string;
+  /** Leave undefined to hide. */
+  year?: string;
   /** Discipline tags, e.g. "Fashion Campaign", "Art Direction". */
   disciplines: string[];
   /** Your exact role(s) on the project. */

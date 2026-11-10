@@ -105,7 +105,7 @@ function Gallery({ list }: { list: Project[] }) {
               <span className={`tag tag--${p.kind}`}>{kindLabel(p.kind)}</span>
             </div>
             <p className="card__sub">
-              {p.disciplines.join(' · ')} <span>— {p.year}</span>
+              {p.disciplines.join(' · ')}{p.year ? <span> — {p.year}</span> : null}
             </p>
           </Link>
         </article>
@@ -156,7 +156,7 @@ function Index({ list }: { list: Project[] }) {
               <span className="index__title">{p.title}</span>
               <span className={`tag tag--${p.kind}`}>{kindLabel(p.kind)}</span>
               <span className="index__disc">{p.disciplines.join(', ')}</span>
-              <span className="index__year">{p.year}</span>
+              <span className="index__year">{p.year ?? ''}</span>
               <span className="index__thumb" aria-hidden="true">
                 <MediaFrame media={{ ...p.cover, ratio: 4 / 5 }} />
               </span>

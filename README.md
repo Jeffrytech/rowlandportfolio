@@ -24,7 +24,8 @@ All content lives in **`src/content/`**. You should not need to touch components
 | Capabilities | `src/content/site.ts` → `capabilities` | |
 | Showreel | `src/content/site.ts` → `showreel.src` / `poster` | The Showreel section and nav link only appear once `src` is set. |
 | Production URL (canonical / social cards) | `src/content/site.ts` → `url` | e.g. `https://yourdomain.com` |
-| Projects & case studies | `src/content/projects.ts` | Replace the generated placeholder entries with real ones (see below). |
+| Projects (order, images, type) | `src/content/projects.ts` | |
+| Case-study text (overview, challenge, insight, role, process, final execution) | `src/content/caseStudies.ts` | One entry per project slug. |
 | Project images & video | `public/media/<project-slug>/` | See `public/media/README.md` for sizes. |
 | Social share image | `public/og-image.png` | 1200×630. |
 | Favicon | `public/favicon.svg` | |

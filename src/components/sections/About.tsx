@@ -12,14 +12,16 @@ export function About() {
         <h2 id="about-title" className="visually-hidden">About {site.name}</h2>
       </header>
 
-      <div className="about__grid">
-        <div className="about__portrait">
-          <MediaFrame
-            media={{ type: 'image', src: about.portrait || undefined, alt: about.portraitAlt, ratio: 3 / 4, tone: '#6f665d' }}
-            sizes="(max-width: 760px) 80vw, 30vw"
-          />
-          <p className="about__portrait-cap">{site.name}<br />{site.title}</p>
-        </div>
+      <div className={`about__grid ${about.portrait ? '' : 'about__grid--solo'}`}>
+        {about.portrait && (
+          <div className="about__portrait">
+            <MediaFrame
+              media={{ type: 'image', src: about.portrait, alt: about.portraitAlt, ratio: 3 / 4 }}
+              sizes="(max-width: 760px) 80vw, 30vw"
+            />
+            <p className="about__portrait-cap">{site.name}<br />{site.title}</p>
+          </div>
+        )}
 
         <div className="about__body">
           <SplitText as="p" text={about.lede} by="words" className="about__lede" />

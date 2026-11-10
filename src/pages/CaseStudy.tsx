@@ -72,12 +72,19 @@ function CaseStudyView({ slug }: { slug: string }) {
         <p className="cs__standfirst" data-cs-fade>{p.standfirst}</p>
 
         <dl className="cs__meta" data-cs-fade>
-          <div><dt>Client</dt><dd>{p.client ?? 'Independent project'}</dd></div>
-          <div><dt>Year</dt><dd>{p.year}</dd></div>
+          {p.client && <div><dt>Client</dt><dd>{p.client}</dd></div>}
+          {p.year && <div><dt>Year</dt><dd>{p.year}</dd></div>}
+          <div><dt>Production</dt><dd>Qovai, a fashion AI agent tool</dd></div>
           <div><dt>Role</dt><dd>{p.role.join(', ')}</dd></div>
           <div><dt>Discipline</dt><dd>{p.disciplines.join(', ')}</dd></div>
           <div><dt>Type</dt><dd>{kind}</dd></div>
         </dl>
+
+        {p.note && (
+          <p className="cs__notice" role="note" data-cs-fade>
+            {p.note}
+          </p>
+        )}
 
         {p.placeholder && (
           <p className="cs__notice" role="note" data-cs-fade>
@@ -110,6 +117,7 @@ function CaseStudyView({ slug }: { slug: string }) {
         </ol>
       </Chapter>
 
+      {p.selectedVisuals.length > 0 && (
       <section className="cs__visuals" aria-labelledby="visuals-title">
         <ChapterLabel n="06" title="Selected Visuals" id="visuals-title" />
         <div className="cs__visual-grid">
@@ -118,6 +126,7 @@ function CaseStudyView({ slug }: { slug: string }) {
           ))}
         </div>
       </section>
+      )}
 
       <section className="cs__final" aria-labelledby="final-title">
         <div className="cs__chapter">
@@ -126,7 +135,7 @@ function CaseStudyView({ slug }: { slug: string }) {
         </div>
         <div className="cs__final-media">
           {p.finalExecution.media.map((m, i) => (
-            <MediaFrame key={i} media={m} showCaption className={i === 0 ? 'is-bleed' : 'is-inset'} />
+            <MediaFrame key={i} media={m} showCaption className={m.ratio < 1 ? 'is-portrait' : i === 0 ? 'is-bleed' : 'is-inset'} />
           ))}
         </div>
       </section>

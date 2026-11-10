@@ -1,23 +1,16 @@
-import type { Media, MediaImage, Project, ProjectKind } from './types';
+import type { MediaImage, Project, ProjectKind } from './types';
+import { caseStudies } from './caseStudies';
 
 /**
  * ─────────────────────────────────────────────────────────────
- *  SELECTED WORK — REPLACE EVERYTHING MARKED "PLACEHOLDER"
+ *  SELECTED WORK
  * ─────────────────────────────────────────────────────────────
- *  None of the entries below describe real clients, campaigns,
- *  results or credits. They exist so the layout can be reviewed.
- *
- *  To add a real project:
- *   1. Put images/videos in /public/media/<slug>/
- *   2. Copy one entry, change the slug, fill in the fields,
- *      add `src` to each media item and set `placeholder: false`.
- *   3. Set `kind` to 'commissioned' (client work) or
- *      'independent' (self-initiated / speculative work).
- *  Order in this array = order on the homepage.
+ *  Images live in /public/media/<slug>/. Case-study text lives in
+ *  ./caseStudies.ts. Order in `seeds` = order on the homepage.
+ *  Set `kind` to 'commissioned' (client work) or 'independent'
+ *  (self-initiated / speculative) once confirmed.
  * ─────────────────────────────────────────────────────────────
  */
-
-const PH = 'Placeholder —';
 
 export const kindLabel = (k: ProjectKind, long = false) =>
   k === 'commissioned' ? 'Commissioned' : k === 'independent' ? (long ? 'Independent / Speculative' : 'Independent') : 'Type TBC';
@@ -280,40 +273,31 @@ const seeds: Seed[] = [
 ];
 
 const build = (s: Seed): Project => {
-  const [mid, deep, light] = s.tone;
-  const label = (what: string) => `${PH} ${what} for project ${s.n}`;
-  const visuals: Media[] = [
-    frame(label('detail image'), 4 / 5, mid, 'Placeholder caption — describe the frame'),
-    frame(label('wide image'), 3 / 2, deep),
-    frame(label('portrait image'), 3 / 4, light),
-    frame(label('detail image'), 1, mid),
-  ];
+  const copy = caseStudies[s.slug];
+  const cover = s.real?.cover ?? frame(`Image for project ${s.n}`, s.ratio, s.tone[0]);
   return {
     slug: s.slug,
-    placeholder: true,
-    title: `Project Title ${s.n}`,
-    standfirst: `${PH} a one-line editorial summary of the idea behind project ${s.n}.`,
+    placeholder: !copy,
+    title: `Project ${s.n}`,
+    standfirst: copy?.standfirst ?? '',
+    note: copy?.note,
     kind: s.kind,
-    client: s.kind === 'commissioned' ? 'Client name (placeholder)' : undefined,
-    year: 'Year',
+    client: undefined,
+    year: undefined,
     disciplines: s.discipline,
-    role: ['Role (placeholder)'],
-    cover: frame(label('cover image'), s.ratio, mid),
-    hero: frame(label('full-bleed hero image'), 16 / 9, deep),
-    overview: `${PH} two or three sentences introducing the project: what it was, who it was for and where it lived (print, digital, out-of-home, film).`,
-    challenge: `${PH} the brief and the tension inside it. What problem had to be solved, and what made it difficult?`,
-    insight: `${PH} the creative idea that unlocked the work — the observation, reference or cultural truth that shaped every decision.`,
-    roleDetail: `${PH} exactly what you were responsible for: e.g. concept, moodboards, casting direction, set and styling direction, on-set art direction, AI image pipeline, retouch direction, final selects. Only list what you personally did.`,
-    process: [
-      { title: 'Research & Reference', body: `${PH} how the visual language was researched and assembled.` },
-      { title: 'Concept & Treatment', body: `${PH} how the idea was developed and presented.` },
-      { title: 'Production', body: `${PH} the shoot, build or generation process and the team you directed.` },
-      { title: 'Post & Delivery', body: `${PH} edit, grade, retouch and roll-out across channels.` },
-    ],
-    selectedVisuals: visuals,
+    role: ['Creative Direction', 'Art Direction'],
+    cover,
+    hero: s.real?.hero ?? cover,
+    overview: copy?.overview ?? '',
+    challenge: copy?.challenge ?? '',
+    insight: copy?.insight ?? '',
+    roleDetail: copy?.roleDetail ?? '',
+    process: copy?.process ?? [],
+    selectedVisuals: [],
     finalExecution: {
-      body: `${PH} describe the final campaign or deliverables and where they appeared. Do not include results unless you can verify them.`,
-      media: [frame(label('final campaign image'), 16 / 9, deep), frame(label('final campaign image'), 4 / 5, light)],
+      body: copy?.finalBody ?? '',
+      // Final execution shows the campaign key visual — a real image, never a placeholder.
+      media: [cover],
     },
     credits: [],
     ...s.real,
