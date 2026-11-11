@@ -21,7 +21,7 @@ const setTag = (attr: 'name' | 'property', key: string, value: string) => {
 /** Per-route document title, description, Open Graph and canonical URL. */
 export function useMeta({ title, description, image, path = '' }: Meta) {
   useEffect(() => {
-    const full = title ? `${title} — ${site.name}` : site.seo.title;
+    const full = title ? `${title} | ${site.name}` : site.seo.title;
     const desc = description ?? site.seo.description;
     const img = image ?? site.seo.ogImage;
     const abs = (p: string) => (site.url ? new URL(p, site.url).toString() : p);

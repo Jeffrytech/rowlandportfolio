@@ -32,8 +32,8 @@ export function Nav() {
     <>
       <a className="skip-link" href="#main">Skip to content</a>
       <header className={`nav ${open ? 'nav--open' : ''}`}>
-        <Link to="/" className="nav__brand" aria-label={`${site.name} — home`}>
-          <span className="nav__mono">R—J—I</span>
+        <Link to="/" className="nav__brand" aria-label={`${site.name}, home`}>
+          <span className="nav__mono">R·J·I</span>
           <span className="nav__name">{site.name}</span>
         </Link>
         <span className="nav__title" aria-hidden="true">{site.title}</span>

@@ -48,7 +48,7 @@ export function Hero() {
       <Link to={`/work/${lead.slug}`} className="hero__visual" data-cursor="View" aria-label={`Featured work: ${lead.title}`}>
         <MediaFrame media={lead.cover} priority sizes="(max-width: 760px) 70vw, 28vw" />
         <span className="hero__visual-cap">
-          <span>Featured — {lead.title}</span>
+          <span>Featured · {lead.title}</span>
         </span>
       </Link>
 

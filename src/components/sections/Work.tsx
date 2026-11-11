@@ -90,7 +90,7 @@ function Gallery({ list }: { list: Project[] }) {
               <h3 className="card__title">{p.title}</h3>
             </div>
             <p className="card__sub">
-              {p.disciplines.join(' · ')}{p.year ? <span> — {p.year}</span> : null}
+              {p.disciplines.join(' · ')}{p.year ? <span> · {p.year}</span> : null}
             </p>
           </Link>
         </article>

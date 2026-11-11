@@ -21,7 +21,7 @@ export const site = {
 
   seo: {
     /** Title used for the homepage and link previews. */
-    title: 'Rowland Jeff Igboanugo — Creative Director & Gen AI Educator',
+    title: 'Rowland Jeff Igboanugo | Creative Director & Gen AI Educator',
     description:
       'Creative Director, founder and Gen AI educator, teaching the fashion industry how to create with AI. Fashion campaigns, art direction and AI-assisted production.',
     /** 1200×630 image in /public used for link previews (social cards). */
@@ -67,14 +67,14 @@ export const site = {
     facts: [
       { label: 'Experience', value: '7+ years in the creative industry' },
       { label: 'Roles', value: 'Founder · Creative Director · AI Researcher' },
-      { label: 'Teaching', value: 'Guest lecturer — 360 fashion students, Manchester Metropolitan University, UK' },
+      { label: 'Teaching', value: 'Guest lecturer to 360 fashion students at Manchester Metropolitan University, UK' },
     ],
   },
 
   capabilities: [
     {
       title: 'Creative Direction',
-      body: 'Setting the idea, the tone and the standard — from first reference to final frame — and leading teams to deliver it.',
+      body: 'Setting the idea, the tone and the standard, from the first reference to the final frame, and leading teams to deliver it.',
     },
     {
       title: 'Art Direction',
@@ -90,7 +90,7 @@ export const site = {
     },
     {
       title: 'AI-Assisted Creative Production',
-      body: 'Directing generative and AI-assisted workflows for ideation, pre-visualisation and production — guided by taste, with transparency about method.',
+      body: 'Directing generative and AI-assisted workflows for ideation, pre-visualisation and production, guided by taste and open about method.',
     },
   ],
 };

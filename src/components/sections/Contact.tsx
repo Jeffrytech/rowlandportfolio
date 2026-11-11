@@ -18,7 +18,7 @@ export function Contact() {
         </a>
       ) : (
         <p className="contact__email contact__email--placeholder">
-          your@email.com <small>Placeholder — add your email in src/content/site.ts</small>
+          your@email.com <small>Placeholder: add your email in src/content/site.ts</small>
         </p>
       )}
 
