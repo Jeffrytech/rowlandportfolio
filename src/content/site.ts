@@ -52,7 +52,7 @@ export const site = {
     lede: 'Creative Director, founder and Gen AI educator, teaching the fashion industry how to create with AI.',
     /** Biography paragraphs. */
     bio: [
-      'I am a Creative Director and founder with more than seven years in the creative industry. My work lives where fashion and technology meet. I decide how a campaign should look and feel, from the very first idea to the final picture.',
+      'I am a Creative Director and founder with more than seven years in the creative industry with background in Design. My work now lives where fashion and technology meet. I decide how a campaign should look and feel, from the very first idea to the final picture.',
       'I am also a Gen AI educator and AI researcher who has collaborated with PhD lecturers at Manchester Metropolitan University on research into AI in the fashion industry. As a guest lecturer, I have taught 360 fashion students at Manchester Metropolitan University, UK, how to use AI in fashion and how it can help them explore ideas faster.',
     ],
     /** Creative philosophy, as short statements. */
