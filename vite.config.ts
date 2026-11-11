@@ -6,13 +6,14 @@ declare const process: { env: Record<string, string | undefined> };
 
 /**
  * Social platforms (WhatsApp, LinkedIn, Facebook…) need absolute image URLs in link previews.
- * Netlify sets `URL` to the site's main address during builds, so we rewrite
+ * Netlify sets `URL` and Vercel sets `VERCEL_PROJECT_PRODUCTION_URL` during builds, so we rewrite
  * root-relative preview URLs to absolute ones automatically. Locally nothing changes.
  */
 const absoluteSocialUrls = (): Plugin => ({
   name: 'absolute-social-urls',
   transformIndexHtml(html) {
-    const base = (process.env.SITE_URL || process.env.URL || '').replace(/\/$/, '');
+    const vercel = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+    const base = (process.env.SITE_URL || process.env.URL || (vercel ? `https://${vercel}` : '')).replace(/\/$/, '');
     if (!base) return html;
     return html
       .replace(/(<meta (?:property|name)="(?:og:image|twitter:image)" content=")\//g, `$1${base}/`)
