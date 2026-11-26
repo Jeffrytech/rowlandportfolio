@@ -13,6 +13,7 @@ import Home from './pages/Home';
 
 const CaseStudy = lazy(() => import('./pages/CaseStudy'));
 const NotFound = lazy(() => import('./pages/NotFound'));
+const ProjectResult = lazy(() => import('./pages/ProjectResult'));
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -38,6 +39,8 @@ function AnimatedRoutes() {
             <Routes location={location}>
               <Route path="/" element={<Home />} />
               <Route path="/work/:slug" element={<CaseStudy />} />
+              {/* Unlisted: not linked anywhere on the site. */}
+              <Route path="/projectresult" element={<ProjectResult />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

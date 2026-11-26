@@ -6,6 +6,8 @@ interface Meta {
   description?: string;
   image?: string;
   path?: string;
+  /** Ask search engines not to list this page (unlisted pages). */
+  noindex?: boolean;
 }
 
 const setTag = (attr: 'name' | 'property', key: string, value: string) => {
@@ -19,8 +21,19 @@ const setTag = (attr: 'name' | 'property', key: string, value: string) => {
 };
 
 /** Per-route document title, description, Open Graph and canonical URL. */
-export function useMeta({ title, description, image, path = '' }: Meta) {
+export function useMeta({ title, description, image, path = '', noindex = false }: Meta) {
   useEffect(() => {
+    let robots = document.head.querySelector<HTMLMetaElement>('meta[name="robots"]');
+    if (noindex) {
+      if (!robots) {
+        robots = document.createElement('meta');
+        robots.name = 'robots';
+        document.head.appendChild(robots);
+      }
+      robots.content = 'noindex, nofollow';
+    } else {
+      robots?.remove();
+    }
     const full = title ? `${title} | ${site.name}` : site.seo.title;
     const desc = description ?? site.seo.description;
     const img = image ?? site.seo.ogImage;
@@ -43,5 +56,5 @@ export function useMeta({ title, description, image, path = '' }: Meta) {
       }
       link.href = abs(path || '/');
     }
-  }, [title, description, image, path]);
+  }, [title, description, image, path, noindex]);
 }

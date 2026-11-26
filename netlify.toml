@@ -22,6 +22,11 @@
     Cache-Control = "public, max-age=604800"
 
 [[headers]]
+  for = "/projectresult"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
   for = "/*"
   [headers.values]
     X-Content-Type-Options = "nosniff"
