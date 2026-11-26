@@ -39,8 +39,8 @@ export const projectResult = {
     alt: 'Original key visual: a smooth, bright beach in front of curved white apartment towers, with a couple on a lounger, a man walking, a girl building a sandcastle and a golden dog by the water under a flat blue sky.',
   },
   after: {
-    src: `${M}/after-2000.webp`,
-    srcSet: `${M}/after-1000.webp 1000w, ${M}/after-1600.webp 1600w, ${M}/after-2000.webp 2000w`,
+    src: `${M}/after-v3-2000.webp`,
+    srcSet: `${M}/after-v3-1000.webp 1000w, ${M}/after-v3-1600.webp 1600w, ${M}/after-v3-2000.webp 2000w`,
     alt: 'Enhanced key visual: the same curved white towers above a textured, lived-in beach under a soft cloudy sky, with a couple on loungers, a girl digging in the sand, a man walking, and two boys throwing a beach ball in the shallow water while a dog jumps between them.',
   },
   ratio: 2000 / 1116,
@@ -58,7 +58,7 @@ export const projectResult = {
       detail: {
         title: 'Sand',
         before: `${M}/detail-sand-before.webp`,
-        after: `${M}/detail-sand-after.webp`,
+        after: `${M}/detail-sand-after-v3.webp`,
         ratio: 1000 / 356,
         beforeAlt: 'Before: smooth, even sand with a blurred plant in the foreground.',
         afterAlt: 'After: sand full of footprints, ridges and tracks.',
@@ -70,7 +70,7 @@ export const projectResult = {
       detail: {
         title: 'Sky',
         before: `${M}/detail-sky-before.webp`,
-        after: `${M}/detail-sky-after.webp`,
+        after: `${M}/detail-sky-after-v3.webp`,
         ratio: 1000 / 480,
         beforeAlt: 'Before: a flat, bright blue sky.',
         afterAlt: 'After: a soft sky with thin, layered clouds.',
@@ -93,7 +93,7 @@ export const projectResult = {
       detail: {
         title: 'The little girl',
         before: `${M}/detail-girl-before.webp`,
-        after: `${M}/detail-girl-after.webp`,
+        after: `${M}/detail-girl-after-v3.webp`,
         ratio: 400 / 260,
         beforeAlt: 'Before: a soft, flatly lit girl kneeling beside a clay-like sandcastle.',
         afterAlt: 'After: a girl crouching with her hands pressed into the sand, with natural light, shadow and texture.',
@@ -105,7 +105,7 @@ export const projectResult = {
       detail: {
         title: 'Water, boys and dog',
         before: `${M}/detail-water-before.webp`,
-        after: `${M}/detail-water-after.webp`,
+        after: `${M}/detail-water-after-v3.webp`,
         ratio: 900 / 520,
         beforeAlt: 'Before: a saturated blue sea with a golden dog walking along the shore.',
         afterAlt: 'After: a softer, natural sea with foam and reflections, two boys throwing a beach ball and a dog jumping between them.',
