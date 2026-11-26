@@ -81,6 +81,15 @@ export default function ProjectResult() {
         <h2 className="cs__label"><span>03</span> Challenges</h2>
         <Reveal className="cs__chapter-body">
           <p className="cs__lead">{P.challenge.body}</p>
+          <h3 className="pr__sub">How I handled it</h3>
+          <ol className="pr__learn">
+            {P.challenge.solutions.map((l, i) => (
+              <li key={i}>
+                <span>{String(i + 1).padStart(2, '0')}</span>
+                {l}
+              </li>
+            ))}
+          </ol>
         </Reveal>
       </section>
 

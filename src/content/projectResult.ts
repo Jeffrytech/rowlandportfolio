@@ -119,6 +119,11 @@ export const projectResult = {
 
   challenge: {
     body: 'AI editing of an existing image is not perfect. After more than two edits on the same image, the quality starts to drop: the picture gets blurry, faces can fade, and hands can lose fingers.',
+    solutions: [
+      'Edit an existing image no more than twice, then start again from the best version.',
+      'For bigger changes, write a new prompt from scratch. It gives a sharper base that can take five or more edits without breaking down.',
+      'Zoom in after every edit to check faces, hands and fingers before moving on.',
+    ],
   },
 
   part2: {
