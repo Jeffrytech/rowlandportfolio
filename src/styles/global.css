@@ -1493,6 +1493,50 @@ a.contact__email:hover {
   font-size: var(--fs-small);
   color: var(--mute);
 }
+.pr__part {
+  margin-bottom: 8px;
+  font-size: var(--fs-mini);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+.pr__p2 {
+  margin-top: var(--section);
+  padding-top: clamp(48px, 6vw, 96px);
+  border-top: 1px solid var(--line);
+}
+.pr__p2-title {
+  padding: 0 var(--gutter);
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: var(--fs-h2);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+}
+.pr__frames {
+  display: grid;
+  gap: clamp(64px, 9vw, 140px);
+  padding: clamp(64px, 9vw, 140px) var(--gutter) 0;
+}
+.pr__frame-text {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 8px var(--col-gap);
+  margin-top: 18px;
+}
+.pr__frame-text .cs__process-n {
+  grid-column: 1 / -1;
+}
+.pr__frame-text h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.8rem, 1.2rem + 1.6vw, 3rem);
+  line-height: 1;
+}
+.pr__frame-text p {
+  max-width: 40rem;
+  color: var(--charcoal);
+}
 .pr__final {
   padding: clamp(72px, 10vw, 160px) var(--gutter) 0;
 }
@@ -1502,6 +1546,7 @@ a.contact__email:hover {
 }
 @media (max-width: 860px) {
   .pr__compare { grid-template-columns: 1fr; row-gap: 28px; }
+  .pr__frame-text { grid-template-columns: 1fr; }
 }
 
 /* ---------- 404 ---------- */

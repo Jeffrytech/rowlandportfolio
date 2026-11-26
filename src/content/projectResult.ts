@@ -29,8 +29,9 @@ export interface Edit {
 export const projectResult = {
   title: 'Luxury Beach Island',
   part: 'Part 1 · Key Visual Enhancement',
+  crumb: 'Part 1 & Part 2',
   standfirst:
-    'Taking an existing beach key visual that felt flat and artificial, and making it feel real, warm and alive, without moving the architecture.',
+    'Taking an existing beach key visual that felt flat and artificial, making it feel real, warm and alive, and then exploring new cinematic moments around it.',
 
   before: {
     src: `${M}/before-1600.webp`,
@@ -124,4 +125,39 @@ export const projectResult = {
       'Zoom in after every edit to check faces, hands and fingers before moving on.',
     ],
   },
+
+  part2: {
+    title: 'Part 2 · Creative Exploration',
+    brief: [
+      'Starting from the same key visual, this part allowed more creative freedom: new camera angles and compositions, while keeping the architecture, the beach and the sense of depth clear in every frame.',
+      'The aim was a contemporary, aspirational beach lifestyle with cinematic light and real moments, while staying culturally sensitive in wardrobe and relevant to the Middle East.',
+    ],
+    frames: [
+      {
+        title: 'At the water’s edge',
+        body: 'The camera drops low, right at the waterline. Two boys and a dog chase a beach ball through the shallow water. The low angle puts you inside the moment, while the towers still rise on the left.',
+        alt: 'Low angle at the waterline: two laughing boys and a golden dog play with a beach ball in shallow water, with the curved white towers and palm trees behind them.',
+        base: `${M}/p2-frame-1`,
+      },
+      {
+        title: 'Catch',
+        body: 'A wider frame on the sand. The ball is in the air, the dog jumps for it and the boys laugh. Kite surfers in the sky and the line of umbrellas and towers give the scene depth.',
+        alt: 'Two boys throw a beach ball on the sand while a curly brown dog leaps for it, with kite surfers in the sky and towers and umbrellas along the beach.',
+        base: `${M}/p2-frame-2`,
+      },
+      {
+        title: 'A quiet moment',
+        body: 'A close, calm frame of a couple on a lounger in soft late-afternoon light. Linen, long sleeves and a long dress keep the wardrobe elegant and modest. The beach curves away behind them.',
+        alt: 'A couple relax together on a beach lounger, he in a light blue linen shirt and she in a long pink dress, sun hat and sunglasses, with kite surfers over the sea.',
+        base: `${M}/p2-frame-3`,
+      },
+      {
+        title: 'Family time',
+        body: 'A mother on the lounger, her daughter pouring sand into her hand, and the boys playing ball behind them. Three layers, front, middle and back, tell one family story in a single frame.',
+        alt: 'A mother in a long pink dress and sun hat reclines on a lounger as her young daughter pours sand into her hand, while two boys play with a beach ball by the water.',
+        base: `${M}/p2-frame-4`,
+      },
+    ],
+  },
 };
+

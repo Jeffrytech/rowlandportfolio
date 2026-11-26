@@ -38,7 +38,7 @@ const staticRoutes = (): Plugin => ({
       this.emitFile({ type: 'asset', fileName: `work/${slug}/index.html`, source: html });
     }
     const unlisted = html
-      .replace(/<title>[^<]*<\/title>/, '<title>Luxury Beach Island, Part 1 | Rowland Jeff Igboanugo</title>')
+      .replace(/<title>[^<]*<\/title>/, '<title>Luxury Beach Island | Rowland Jeff Igboanugo</title>')
       .replace('<meta charset="UTF-8" />', '<meta charset="UTF-8" />\n    <meta name="robots" content="noindex, nofollow" />');
     this.emitFile({ type: 'asset', fileName: 'projectresult/index.html', source: unlisted });
   },

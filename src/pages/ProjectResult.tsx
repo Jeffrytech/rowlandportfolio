@@ -7,7 +7,7 @@ import { SplitText } from '../components/SplitText';
 /** Unlisted results page. Reachable only by direct link: /projectresult */
 export default function ProjectResult() {
   useMeta({
-    title: `${P.title}, ${P.part}`,
+    title: P.title,
     description: P.standfirst,
     image: P.after.src,
     path: '/projectresult',
@@ -19,7 +19,7 @@ export default function ProjectResult() {
       <header className="cs__head">
         <div className="cs__crumbs">
           <Link to="/" className="cs__back">← Portfolio</Link>
-          <span>{P.part}</span>
+          <span>{P.crumb}</span>
         </div>
         <h1 className="cs__title">
           <SplitText text={P.title} immediate delay={0.2} />
@@ -94,9 +94,43 @@ export default function ProjectResult() {
       </section>
 
       <section className="pr__final" aria-labelledby="final-title">
+        <p className="pr__part">{P.part}</p>
         <h2 className="cs__label" id="final-title"><span>04</span> Final Result</h2>
         <div className="pr__img" style={{ aspectRatio: String(P.ratio) }}>
           <img src={P.after.src} srcSet={P.after.srcSet} sizes="100vw" alt={P.after.alt} loading="lazy" decoding="async" />
+        </div>
+      </section>
+
+      <section className="pr__p2" aria-labelledby="p2-title">
+        <h2 className="pr__p2-title" id="p2-title">{P.part2.title}</h2>
+        <div className="cs__chapter">
+          <h3 className="cs__label"><span>01</span> The Brief</h3>
+          <Reveal className="cs__chapter-body">
+            {P.part2.brief.map((p, i) => (
+              <p key={i} className={i === 0 ? 'cs__lead' : undefined}>{p}</p>
+            ))}
+          </Reveal>
+        </div>
+        <div className="pr__frames">
+          {P.part2.frames.map((f, i) => (
+            <Reveal key={f.title} className="pr__frame">
+              <div className="pr__img" style={{ aspectRatio: String(P.ratio) }}>
+                <img
+                  src={`${f.base}-2000.webp`}
+                  srcSet={`${f.base}-1000.webp 1000w, ${f.base}-1600.webp 1600w, ${f.base}-2000.webp 2000w`}
+                  sizes="100vw"
+                  alt={f.alt}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div className="pr__frame-text">
+                <span className="cs__process-n">Frame {String(i + 1).padStart(2, '0')}</span>
+                <h3>{f.title}</h3>
+                <p>{f.body}</p>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </section>
     </article>
