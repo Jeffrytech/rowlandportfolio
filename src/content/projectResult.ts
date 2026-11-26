@@ -134,16 +134,16 @@ export const projectResult = {
     ],
     frames: [
       {
-        title: 'Catch',
-        body: 'A wider frame on the sand. The ball is in the air, the dog jumps for it and the boys laugh. Kite surfers in the sky and the line of umbrellas and towers give the scene depth.',
-        alt: 'Two boys throw a beach ball on the sand while a curly brown dog leaps for it, with kite surfers in the sky and towers and umbrellas along the beach.',
-        base: `${M}/p2-frame-2`,
-      },
-      {
         title: 'A quiet moment',
         body: 'A close, calm frame of a couple on a lounger in soft late-afternoon light. Linen, long sleeves and a long dress keep the wardrobe elegant and modest. The beach curves away behind them.',
         alt: 'A couple relax together on a beach lounger, he in a light blue linen shirt and she in a long pink dress, sun hat and sunglasses, with kite surfers over the sea.',
         base: `${M}/p2-frame-3`,
+      },
+      {
+        title: 'Catch',
+        body: 'A wider frame on the sand. The ball is in the air, the dog jumps for it and the boys laugh. Kite surfers in the sky and the line of umbrellas and towers give the scene depth.',
+        alt: 'Two boys throw a beach ball on the sand while a curly brown dog leaps for it, with kite surfers in the sky and towers and umbrellas along the beach.',
+        base: `${M}/p2-frame-2`,
       },
       {
         title: 'Family time',
