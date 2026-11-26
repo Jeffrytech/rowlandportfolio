@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import type { Plugin } from 'vite';
+import { projects } from './src/content/projects';
 
 declare const process: { env: Record<string, string | undefined> };
 
@@ -21,8 +22,30 @@ const absoluteSocialUrls = (): Plugin => ({
   },
 });
 
+/**
+ * Writes a real HTML file for every route (e.g. /projectresult/index.html, /work/project-01/index.html)
+ * so direct links work on any static host, even without rewrite rules.
+ * The unlisted /projectresult page also gets its own title and a noindex tag.
+ */
+const staticRoutes = (): Plugin => ({
+  name: 'static-routes',
+  enforce: 'post',
+  generateBundle(_opts, bundle) {
+    const index = bundle['index.html'];
+    if (!index || index.type !== 'asset') return;
+    const html = String(index.source);
+    for (const slug of projects.map((p) => p.slug)) {
+      this.emitFile({ type: 'asset', fileName: `work/${slug}/index.html`, source: html });
+    }
+    const unlisted = html
+      .replace(/<title>[^<]*<\/title>/, '<title>Luxury Beach Island, Part 1 | Rowland Jeff Igboanugo</title>')
+      .replace('<meta charset="UTF-8" />', '<meta charset="UTF-8" />\n    <meta name="robots" content="noindex, nofollow" />');
+    this.emitFile({ type: 'asset', fileName: 'projectresult/index.html', source: unlisted });
+  },
+});
+
 export default defineConfig({
-  plugins: [react(), absoluteSocialUrls()],
+  plugins: [react(), absoluteSocialUrls(), staticRoutes()],
   build: {
     target: 'es2020',
     cssCodeSplit: true,
