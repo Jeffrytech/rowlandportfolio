@@ -118,11 +118,10 @@ export const projectResult = {
   ] as Edit[],
 
   challenge: {
-    body: 'AI editing of an existing image is not perfect. After more than two edits on the same image, the quality starts to drop: the picture gets blurry, faces can fade, and hands can lose fingers.',
-    solutions: [
-      'Edit an existing image no more than twice, then start again from the best version.',
-      'For bigger changes, write a new prompt from scratch. It gives a sharper base that can take five or more edits without breaking down.',
-      'Zoom in after every edit to check faces, hands and fingers before moving on.',
+    // Rowland's own explanation, lightly edited for clarity.
+    paragraphs: [
+      'AI editing of an existing image is not perfect, especially when you make more than two edits on the same image. Each extra edit makes the image more blurry, and the people in it can start to lose a finger or have their face fade out.',
+      'Most of the time, it is much better to edit an existing image only twice, to avoid heavy blur and fading faces. The other option is to write a prompt from scratch. This gives a much better image, and it can be edited more than five times.',
     ],
   },
 
