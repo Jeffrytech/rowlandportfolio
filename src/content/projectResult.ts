@@ -134,12 +134,6 @@ export const projectResult = {
     ],
     frames: [
       {
-        title: 'At the water’s edge',
-        body: 'The camera drops low, right at the waterline. Two boys and a dog chase a beach ball through the shallow water. The low angle puts you inside the moment, while the towers still rise on the left.',
-        alt: 'Low angle at the waterline: two laughing boys and a golden dog play with a beach ball in shallow water, with the curved white towers and palm trees behind them.',
-        base: `${M}/p2-frame-1`,
-      },
-      {
         title: 'Catch',
         body: 'A wider frame on the sand. The ball is in the air, the dog jumps for it and the boys laugh. Kite surfers in the sky and the line of umbrellas and towers give the scene depth.',
         alt: 'Two boys throw a beach ball on the sand while a curly brown dog leaps for it, with kite surfers in the sky and towers and umbrellas along the beach.',
