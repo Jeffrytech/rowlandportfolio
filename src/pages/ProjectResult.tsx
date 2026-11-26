@@ -78,18 +78,9 @@ export default function ProjectResult() {
       </section>
 
       <section className="cs__chapter">
-        <h2 className="cs__label"><span>03</span> Challenges & Learnings</h2>
+        <h2 className="cs__label"><span>03</span> Challenges</h2>
         <Reveal className="cs__chapter-body">
           <p className="cs__lead">{P.challenge.body}</p>
-          <h3 className="pr__sub">What I learned</h3>
-          <ol className="pr__learn">
-            {P.challenge.learnings.map((l, i) => (
-              <li key={i}>
-                <span>{String(i + 1).padStart(2, '0')}</span>
-                {l}
-              </li>
-            ))}
-          </ol>
         </Reveal>
       </section>
 
