@@ -109,7 +109,7 @@ export const projectResult = {
     },
     {
       title: 'Life at the water’s edge',
-      body: 'I added two boys throwing a beach ball in the shallow water, with a dog jumping between them. This brings movement and joy, so the beach feels lived in, not staged. Their reflections in the wet sand help them sit naturally in the scene.',
+      body: 'I added two boys throwing a beach ball in the shallow water, with a dog jumping between them. This brings movement and joy, so the beach feels lived in, not staged, and tells a small visual story. Their laughter, the water washing around their feet and their reflections in the wet sand make it feel like a real moment caught on camera.',
       detail: {
         title: 'Water, boys and dog',
         before: `${M}/detail-water-before.webp`,
