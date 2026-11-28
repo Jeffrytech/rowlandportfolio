@@ -81,9 +81,9 @@ export const projectResult = {
       body: 'The sea was a strong, saturated turquoise. I made it softer and calmer to match the cloudy sky, with gentle ripples, a line of white foam where the water meets the sand, and wet sand that reflects the people standing on it.',
       detail: {
         title: 'Water',
-        before: `${M}/detail-sea-before.webp`,
-        after: `${M}/detail-sea-after.webp`,
-        ratio: 360 / 516,
+        before: `${M}/detail-sea-before-v2.webp`,
+        after: `${M}/detail-sea-after-v2.webp`,
+        ratio: 360 / 280,
         beforeAlt: 'Before: strong turquoise water with sharp ripples running onto smooth sand.',
         afterAlt: 'After: calmer, softer sea with gentle ripples and a line of white foam on the sand.',
       },
