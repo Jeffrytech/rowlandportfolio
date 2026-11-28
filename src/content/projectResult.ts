@@ -82,10 +82,10 @@ export const projectResult = {
     },
     {
       title: 'Realism and depth in the little girl',
-      body: 'In the original, the girl looked pasted on. Her edges were soft, the light on her was flat, and her sandcastle looked like clay. I rebuilt her so she truly belongs in the scene:',
+      body: 'In the original, the girl looked pasted on. Her edges were soft, her skin looked smooth like plastic, and her sandcastle looked like clay. I rebuilt her so she truly belongs in the scene:',
       points: [
-        'Light: the sun falls on her from the same direction as on everyone else.',
-        'Shadow: a soft shadow sits right under her feet and hands, so she is on the ground, not floating above it.',
+        'Light: she has the same soft, even light from the cloudy sky as everyone else on the beach, so she no longer stands out.',
+        'Grounding: her bare feet sink slightly into the sand, so she sits on the beach instead of floating above it.',
         'Touch: her hands press into the sand, and the sand clumps and piles up around them.',
         'Details: her ponytail, the folds in her clothes and her skin tone match the rest of the picture.',
         'Size and focus: she is the right size for how far she is from the camera, and as sharp as the people near her.',
@@ -95,8 +95,8 @@ export const projectResult = {
         before: `${M}/detail-girl-before.webp`,
         after: `${M}/detail-girl-after-v3.webp`,
         ratio: 400 / 260,
-        beforeAlt: 'Before: a soft, flatly lit girl kneeling beside a clay-like sandcastle.',
-        afterAlt: 'After: a girl crouching with her hands pressed into the sand, with natural light, shadow and texture.',
+        beforeAlt: 'Before: a soft-edged girl kneeling beside a clay-like sandcastle.',
+        afterAlt: 'After: a girl crouching with her hands pressed into the sand, in soft natural light with real sand texture.',
       },
     },
     {
