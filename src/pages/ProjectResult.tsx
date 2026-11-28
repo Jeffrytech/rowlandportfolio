@@ -134,14 +134,14 @@ function Detail({ d }: { d: DetailPair }) {
   return (
     <div className="pr__detail">
       {[
-        ['Before', d.before, d.beforeAlt],
-        ['After', d.after, d.afterAlt],
-      ].map(([label, src, alt]) => (
+        ['Before', d.before, d.beforeAlt, d.beforeTitle ?? d.title],
+        ['After', d.after, d.afterAlt, d.afterTitle ?? d.title],
+      ].map(([label, src, alt, caption]) => (
         <figure key={label}>
           <div className="pr__img" style={{ aspectRatio: String(d.ratio) }}>
             <img src={src} alt={alt} loading="lazy" decoding="async" />
           </div>
-          <figcaption><span>{label}</span> {d.title}</figcaption>
+          <figcaption><span>{label}</span> {caption}</figcaption>
         </figure>
       ))}
     </div>

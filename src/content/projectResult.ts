@@ -12,6 +12,9 @@ const M = '/media/project-result';
 
 export interface DetailPair {
   title: string;
+  /** Optional caption override when the before and after show different things. */
+  beforeTitle?: string;
+  afterTitle?: string;
   before: string;
   after: string;
   ratio: number;
@@ -112,6 +115,7 @@ export const projectResult = {
       body: 'I added two boys throwing a beach ball in the shallow water, with a dog jumping between them. This brings movement and joy, so the beach feels lived in, not staged, and tells a small visual story. Their laughter, the water washing around their feet and their reflections in the wet sand make it feel like a real moment caught on camera. Far behind them on the horizon, I added kite surfers, which add depth and show how far the sea stretches.',
       detail: {
         title: 'Water, boys and dog',
+        beforeTitle: 'Dog and water',
         before: `${M}/detail-water-before.webp`,
         after: `${M}/detail-water-after-v3.webp`,
         ratio: 900 / 520,
