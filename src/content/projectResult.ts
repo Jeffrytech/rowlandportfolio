@@ -121,7 +121,8 @@ export const projectResult = {
     // Rowland's own explanation, lightly edited for clarity.
     paragraphs: [
       'AI editing of an existing image is not perfect, especially when you make more than two edits on the same image. Each extra edit makes the image more blurry, and the people in it can start to lose a finger or have their face fade out.',
-      'Most of the time, it is much better to edit an existing image only twice, to avoid heavy blur and fading faces. The other option is to write a prompt from scratch. This gives a much better image, and it can be edited more than five times.',
+      'To get the details accurate, I had to upscale and enhance the visual so the fine details were clearly visible.',
+      'In conclusion, I would say it is much better to edit an existing image only two to three times, to avoid heavy blur, lost fingers and fading faces. The other option is to write a prompt from scratch. This gives a much better image, and it can be edited more than five times.',
     ],
   },
 
